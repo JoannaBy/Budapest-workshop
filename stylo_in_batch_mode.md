@@ -121,12 +121,14 @@ density.same = density(final.results.same)
 density.different = density(final.results.different)
 
 # plotting the outgroup and the ingroup distances
+fancy.green = rgb(0, 1, 0, 0.3)
+fancy.red = rgb(1, 0, 0, 0.3)
 max.y.value = max(c(density.same$y, density.different$y))
 max.x.value = max(c(density.same$x, density.different$x))
 plot(NULL, ylim = c(0, max.y.value), xlim = c(0, max.x.value), ylab = "density", xlab = "distance")
-polygon(density.same, col = rgb(0, 1, 0, 0.3))
-polygon(density.different, col = rgb(1, 0, 0, 0.3))
-legend("topleft", legend = c("ingroup distances", "outgroup distances"), lty = 1, lwd = 5, col = c(fancy.green, fancy.red), bty = "n")
+polygon(density.same, col = fancy.green)
+polygon(density.different, col = fancy.red)
+legend("topleft", legend = c("ingroup distances", "outgroup distances"), lty = 1, lwd = 10, col = c(fancy.green, fancy.red), bty = "n")
 ```
 
 
